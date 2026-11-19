@@ -252,6 +252,12 @@
   .zoom::backdrop { background: rgb(30 34 31 / .62); }
   .zoom img { max-width: min(92vw, 40rem); max-height: 88svh; width: auto; height: auto; border-radius: var(--v-radius); box-shadow: var(--v-e2); background: var(--v-surface); cursor: zoom-out; }
   .zoom__close { position: fixed; top: max(var(--v-4), env(safe-area-inset-top)); right: var(--v-gutter); width: 2.75rem; height: 2.75rem; border-radius: 50%; background: var(--v-surface); color: var(--v-ink); box-shadow: var(--v-e1); font-size: 1.4rem; line-height: 1; display: grid; place-items: center; }
+  /* плашка «демо для заказчика»: для показа на Kwork, в Тильду не переносится.
+     Снимается по «убери плашку демо» и при упаковке. Без анимации, видна без скролла. */
+  .demo-for { display: inline-flex; align-items: center; gap: .6em; margin: 0 0 var(--v-4);
+    font-size: var(--v-t-xs); letter-spacing: .04em; font-weight: 500; color: var(--v-ink);
+    background: color-mix(in oklab, var(--v-surface) 85%, transparent); border: 1px solid var(--v-hair-strong);
+    border-radius: 999px; padding: .42em .95em; }
 </style>
 </head>
 <body>
@@ -281,6 +287,8 @@
           </picture>
         </div>
         <div class="v-copy v-copy--lead hero-b__copy" data-v-cue="0 0.8 0">
+          <!-- плашка демо для заказчика: снимается по «убери плашку демо», в Тильду не переносится -->
+          <p class="demo-for">Демо для заказчика</p>
           <span class="v-label">Студия маникюра</span>
           <h1 class="v-display nd nd--xl" data-v-kinetic="lines">Маникюр и педикюр в {{город}} – запись на ближайшие дни</h1>
           <p class="gal__price hero-b__price"><b>{{цена}}&nbsp;₽</b><span>маникюр с гель-лаком, 90 минут</span></p>
